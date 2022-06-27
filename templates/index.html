@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="box">
+    <div class="screen">
+        <div class="main-screen" id="output">0</div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="buttons">
+            <button class="btn-clear btn btn-danger" id="clearButton">C</button>
+            <button class="nums btn btn-default" value="neg">±</button>
+            <button class="btn-operate btn btn-default" value="%">%</button>
+            <button class="btn-operate btn btn-default" value="/">/</button>
+        </div>
+
+        <div class="buttons">
+            <button class="nums btn btn-default" value="7">7</button>
+            <button class="nums btn btn-default" value="8">8</button>
+            <button class="nums btn btn-default" value="9">9</button>
+            <button class="btn-operate btn btn-default" value="x">x</button>
+        </div>
+
+        <div class="buttons">
+            <button class="nums btn btn-default" value="4">4</button>
+            <button class="nums btn btn-default" value="5">5</button>
+            <button class="nums btn btn-default" value="6">6</button>
+            <button class="btn-operate btn btn-default" value="-">-</button>
+        </div>
+
+        <div class="buttons">
+            <button class="nums btn btn-default" value="1">1</button>
+            <button class="nums btn btn-default" value="2">2</button>
+            <button class="nums btn btn-default" value="3">3</button>
+            <button class="btn-operate btn btn-default" value="+">+</button>
+        </div>
+
+        <div class="buttons">
+            <button class="nums btn-zero btn btn-default" value="0">0</button>
+            <button class="nums btn btn-default" value=".">.</button>
+            <button class="btn-equal btn btn-info" id="resultButton">=</button>
+        </div>
+    </div>
+</div>
+
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<!--<script src="{{ url_for('static', filename='js/main_app.js') }}"></script>-->
+<script src="../static/js/main_app.js"></script>
+<script type="text/javascript">
+    var $SCRIPT_ROOT = {{request.script_root | tojson | safe}};
+</script>
+
+</body>
+</html>
